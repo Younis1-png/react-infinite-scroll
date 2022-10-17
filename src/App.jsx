@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react";
 import React, { useEffect, useState } from "react";
 
 const App = () => {
@@ -6,7 +5,7 @@ const App = () => {
 
   // Unsplash API
   const count = 30;
-  const apiKey = "Jq_6eVktAwO3_Ly_PSEcliWT4uM95lELdLJ18GC5AqY";
+  const apiKey = "lKQuiUD_LGJe2qDH7Q43fDokTAM-lNxq6WXzEA_1JzM";
   const apiUrl = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${count}`;
 
   const unsplashData = () => {
@@ -27,7 +26,7 @@ const App = () => {
         <div className="image-container">
           <h1>UNSPLASH INFINITE SCROLL</h1>
           {data.map((data) => {
-            return <img src={data.urls.regular} alt="" />;
+            return <img src={data.urls.regular} alt="" key={data.id} />;
           })}
         </div>
       )}
